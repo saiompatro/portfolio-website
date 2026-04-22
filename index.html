@@ -926,44 +926,49 @@
   <div class="projects-grid fade-up delay-1">
 
     <!-- Featured: Jikaan -->
-    <div class="project-card featured">
+    <div class="project-card featured" data-href="projects/jikaan.html">
       <div class="project-left">
         <div class="project-num">01</div>
         <span class="project-badge">Startup · Founder</span>
         <h3 class="project-name">Jikaan</h3>
         <span class="project-tag">EdTech · Platform · 2024–Present</span>
+        <span class="project-view">View Project →</span>
       </div>
       <div class="project-right">
         <p class="project-desc">A structured platform that facilitates seamless skill exchange without financial constraints — fostering a community of lifelong learners. Skills are valued through supply-and-demand economics, with TimeTokens convertible to real currency. Motivated by the belief: <em>learn for the love of learning, teach for the love of teaching.</em></p>
       </div>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-href="projects/nivesh-sutra.html">
       <div class="project-num">02</div>
       <h3 class="project-name">Nivesh Sutra</h3>
       <p class="project-desc">AI-powered Indian equity wealth management platform combining technical analysis, NLP sentiment, and portfolio optimization for Nifty 50 stocks.</p>
       <span class="project-tag">AI · Finance · NLP</span>
+      <span class="project-view">View Project →</span>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-href="projects/goal-ai.html">
       <div class="project-num">03</div>
       <h3 class="project-name">Goal AI</h3>
       <p class="project-desc">FIFA World Cup predictor and player analysis tool — data-driven forecasting meets the beautiful game with machine learning at its core.</p>
       <span class="project-tag">ML · Sports · Data</span>
+      <span class="project-view">View Project →</span>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-href="projects/credibility-compass.html">
       <div class="project-num">04</div>
       <h3 class="project-name">Credibility Compass</h3>
       <p class="project-desc">An AI-integrated application that identifies whether a news article is real or fake — combating misinformation at scale.</p>
       <span class="project-tag">NLP · AI · Classification</span>
+      <span class="project-view">View Project →</span>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-href="projects/game-of-wall-street.html">
       <div class="project-num">05</div>
       <h3 class="project-name">Game of Wall Street</h3>
       <p class="project-desc">A comprehensive economy Discord bot with stock trading, job progression, casino mechanics, and full character RPG systems.</p>
       <span class="project-tag">Game · Discord · Python</span>
+      <span class="project-view">View Project →</span>
     </div>
 
   </div>
@@ -1068,8 +1073,13 @@
     darkBtn.classList.toggle('on', on);
     navDarkBtn.classList.toggle('on', on);
     tweaks.darkMode = on;
+    localStorage.setItem('dark-mode', on);
     updateNavScheme();
   }
+
+  // Restore dark mode preference from localStorage
+  const savedDark = localStorage.getItem('dark-mode') === 'true';
+  if (savedDark) applyDark(true);
 
   darkBtn.addEventListener('click', () => applyDark(!tweaks.darkMode));
   navDarkBtn.addEventListener('click', () => applyDark(!tweaks.darkMode));
@@ -1148,6 +1158,13 @@
       e.preventDefault();
       const target = document.querySelector(a.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ── Clickable project cards ─────────── */
+  document.querySelectorAll('.project-card[data-href]').forEach(card => {
+    card.addEventListener('click', () => {
+      window.location.href = card.dataset.href;
     });
   });
 </script>
