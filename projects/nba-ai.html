@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game of Wall Street — Saiom Patro</title>
+  <title>NBA AI — Saiom Patro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -55,7 +55,7 @@
     .project-hero-badge { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-m); margin-bottom: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; }
     .project-hero-badge span { border-left: 1px solid var(--sage-l); padding-left: 1.5rem; }
     .project-hero-badge span:first-child { border-left: none; padding-left: 0; }
-    .project-hero-title { font-family: var(--font-d); font-size: clamp(3rem, 7vw, 7rem); font-weight: 300; color: var(--sage-xd); line-height: 0.92; margin-bottom: 2.5rem; }
+    .project-hero-title { font-family: var(--font-d); font-size: clamp(3.5rem, 8vw, 8rem); font-weight: 300; color: var(--sage-xd); line-height: 0.92; margin-bottom: 2.5rem; }
     .project-hero-desc { max-width: 55ch; font-size: 1rem; line-height: 1.85; color: var(--ink); opacity: 0.9; margin-bottom: 3rem; }
     .project-hero-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
     .btn-primary { font-family: var(--font-b); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream); background: var(--sage-xd); text-decoration: none; padding: 0.7rem 1.8rem; transition: background 0.25s; }
@@ -73,22 +73,19 @@
     .ps-body p + p { margin-top: 1.2rem; }
     .two-col { display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
 
-    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--sage-l); border: 1px solid var(--sage-l); margin-top: 3rem; }
-    .stat-item { background: var(--cream); text-align: center; padding: 2rem 1rem; transition: background 0.6s; }
-    .project-section.sage .stat-item { background: var(--sage-xl); }
-    .stat-num { font-family: var(--font-d); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 300; color: var(--sage-xd); line-height: 1; margin-bottom: 0.5rem; }
-    .stat-label { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage-m); }
+    .model-stack { display: flex; flex-direction: column; gap: 1px; background: var(--sage-l); border: 1px solid var(--sage-l); margin-top: 2.5rem; }
+    .model-row { display: grid; grid-template-columns: 1fr 2fr; background: var(--cream); padding: 1.2rem 1.5rem; gap: 1.5rem; align-items: center; transition: background 0.6s; }
+    .project-section.sage .model-row { background: var(--sage-xl); }
+    .model-row:hover { background: var(--sage-xd); }
+    .model-row:hover .model-label, .model-row:hover .model-value { color: var(--sage-l); }
+    .model-label { font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage-m); transition: color 0.3s; }
+    .model-value { font-family: var(--font-d); font-size: 1rem; color: var(--sage-d); transition: color 0.3s; }
 
     .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
     .feature-item { padding: 2rem; border: 1px solid var(--sage-l); transition: border-color 0.3s; }
     .feature-item:hover { border-color: var(--sage-d); }
     .feature-item h4 { font-family: var(--font-d); font-size: 1.15rem; font-weight: 400; color: var(--sage-xd); margin-bottom: 0.7rem; }
     .feature-item p { font-size: 0.85rem; line-height: 1.75; color: var(--ink); opacity: 0.85; }
-
-    .casino-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-    .casino-table th { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-m); text-align: left; padding: 0 1.5rem 1rem 0; border-bottom: 1px solid var(--sage-l); }
-    .casino-table td { font-family: var(--font-d); font-size: 0.95rem; font-weight: 300; color: var(--sage-d); padding: 0.8rem 1.5rem 0.8rem 0; border-bottom: 1px solid var(--sage-xl); }
-    .casino-table td:first-child { color: var(--sage-xd); font-weight: 400; }
 
     .tech-pills { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2.5rem; }
     .tech-pill { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sage-m); border: 1px solid rgba(255,255,255,0.12); padding: 0.4rem 0.9rem; }
@@ -106,8 +103,7 @@
       .project-back { top: 4.5rem; left: 1.5rem; }
       .project-section { padding: 4rem 1.5rem; }
       .two-col { grid-template-columns: 1fr; gap: 3rem; }
-      .casino-table { font-size: 0.85rem; }
-      .casino-table th, .casino-table td { padding-right: 0.8rem; }
+      .model-row { grid-template-columns: 1fr; gap: 0.4rem; }
       .project-footer { padding: 2rem 1.5rem; }
     }
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -141,17 +137,17 @@
 
 <section class="project-hero">
   <a href="../index.html#projects" class="project-back">All Projects</a>
-  <div class="project-num">04 / 05</div>
+  <div class="project-num">05 / 05</div>
   <div class="project-hero-badge">
-    <span>Game</span>
-    <span>Discord</span>
-    <span>Python</span>
+    <span>Machine Learning</span>
+    <span>Sports Analytics</span>
+    <span>Open Source</span>
     <span>2025</span>
   </div>
-  <h1 class="project-hero-title">Game of<br>Wall Street</h1>
-  <p class="project-hero-desc">A comprehensive economy Discord bot with stock trading, job progression, casino games, and full character RPG systems — an entire financial ecosystem inside a Discord server.</p>
+  <h1 class="project-hero-title">NBA AI</h1>
+  <p class="project-hero-desc">Real-time NBA game analytics dashboard — ingesting live play-by-play data, running an XGBoost shot-quality model and a PyTorch win-probability model, and delivering live predictions via WebSocket.</p>
   <div class="project-hero-links">
-    <a href="https://github.com/saiompatro/discord-bot" class="btn-primary" target="_blank">GitHub ↗</a>
+    <a href="https://github.com/saiompatro/NBA-AI" class="btn-primary" target="_blank">GitHub ↗</a>
     <a href="../index.html#projects" class="btn-outline">← All Projects</a>
   </div>
 </section>
@@ -159,75 +155,52 @@
 <section class="project-section sage">
   <div class="two-col">
     <div>
-      <p class="ps-eyebrow">Overview</p>
-      <h2 class="ps-heading">Finance<br><em style="font-style:italic; color:var(--sage-d);">as a game.</em></h2>
+      <p class="ps-eyebrow">The Models</p>
+      <h2 class="ps-heading">Live<br><em style="font-style:italic; color:var(--sage-d);">intelligence.</em></h2>
     </div>
     <div class="ps-body">
-      <p>Game of Wall Street turns financial mechanics into an engaging Discord game. Players choose from 30+ unique characters — each with distinct stats, backgrounds, and job bonuses — and build wealth through the job system, stock market, and casino.</p>
-      <p>Every system is interconnected: your character's intellect affects job payouts, your level unlocks higher-tier jobs, and your stock portfolio compounds over time. It's designed to be both entertaining and subtly educational about real economic concepts.</p>
+      <p>NBA AI pairs two purpose-built models to analyse every possession in real time. An XGBoost shot-quality regressor scores each attempt using distance, angle, defender proximity, and shot-clock context. A PyTorch MLP takes that score plus game state to output a rolling win probability — refreshed every three seconds via WebSocket.</p>
+      <p>Both models ship as pre-trained artifacts so the app runs immediately without a separate data pipeline. The synthetic training generator is included so anyone can retrain or fine-tune with real tracking data.</p>
+      <div class="model-stack">
+        <div class="model-row"><span class="model-label">Shot Quality</span><span class="model-value">XGBoost — distance, angle, defender dist, shot clock, situation</span></div>
+        <div class="model-row"><span class="model-label">Win Probability</span><span class="model-value">PyTorch MLP — score diff, time, possession, fouls, shot quality</span></div>
+        <div class="model-row"><span class="model-label">Live Data</span><span class="model-value">nba_api — scoreboard + play-by-play, polled every 3 seconds</span></div>
+        <div class="model-row"><span class="model-label">Push Layer</span><span class="model-value">Flask-SocketIO — prediction events broadcast to all clients</span></div>
+        <div class="model-row"><span class="model-label">Fallback</span><span class="model-value">ESPN public APIs — scoreboard + contextual news</span></div>
+      </div>
     </div>
-  </div>
-  <div class="stat-row">
-    <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Characters</div></div>
-    <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Jobs</div></div>
-    <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Stocks</div></div>
-    <div class="stat-item"><div class="stat-num">60+</div><div class="stat-label">Achievements</div></div>
-    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Casino Games</div></div>
   </div>
 </section>
 
 <section class="project-section">
-  <p class="ps-eyebrow">Game Systems</p>
-  <h2 class="ps-heading">How to play</h2>
+  <p class="ps-eyebrow">Capabilities</p>
+  <h2 class="ps-heading">Features</h2>
   <div class="feature-grid">
     <div class="feature-item">
-      <h4>Character System</h4>
-      <p>Choose from 30+ characters — JP Morgan broker, Stanford grad, self-made CEO, night-shift janitor. Each has unique stats (intellect, wealth, leadership) and job bonuses that shape your entire playthrough.</p>
+      <h4>Live Scoreboard</h4>
+      <p>Detects active NBA games automatically and polls play-by-play every three seconds — score, possession, latest event, and shot context all update in real time.</p>
     </div>
     <div class="feature-item">
-      <h4>Job Progression</h4>
-      <p>20 jobs across 4 tiers: Street Vendor → Retail Manager → Lawyer → CEO. Jobs unlock at level milestones and reward players whose character stats align with the role's demands.</p>
+      <h4>Shot Quality Model</h4>
+      <p>XGBoost regressor scores every shot attempt using distance, angle, defender distance, shot clock, and game situation — quantifying shot difficulty on every possession.</p>
     </div>
     <div class="feature-item">
-      <h4>Stock Market</h4>
-      <p>20 stocks across tech, finance, semiconductor, crypto, and entertainment sectors with realistic volatility-based price movements. Buy, sell, and build a portfolio for long-term wealth.</p>
+      <h4>Win Probability</h4>
+      <p>PyTorch MLP converts game state into a live win-probability curve, incorporating shot quality as an input alongside score differential, time remaining, and foul counts.</p>
     </div>
     <div class="feature-item">
-      <h4>Casino</h4>
-      <p>Five casino games — Coinflip, Slots, Blackjack, Roulette, and Dice Roll — each with distinct house edges, bet limits, and risk profiles. Tilt protection prevents runaway losses.</p>
+      <h4>Playoff Dashboard</h4>
+      <p>Standings, schedule, team form, player leaders, sentiment signals, and alerts — a full playoff-season view updated alongside live games.</p>
     </div>
     <div class="feature-item">
-      <h4>Leveling & Achievements</h4>
-      <p>XP earned from jobs, trading, and casino wins unlocks new tiers. 60+ achievements reward milestones — from first stock purchase to reaching the CEO tier.</p>
+      <h4>Game Predictions</h4>
+      <p>On-demand matchup predictions for any two teams, returned with a plain-English explanation of the pick based on model features and current form.</p>
     </div>
     <div class="feature-item">
-      <h4>Social Economy</h4>
-      <p>Guilds, player duels, and peer-to-peer trading create an emergent social layer. Leaderboards rank players by net worth, level, casino winnings, and job earnings.</p>
+      <h4>Player &amp; Team Pages</h4>
+      <p>Profile views for every playoff player and team — with refreshable contextual news pulled from ESPN and season stats from nba_api.</p>
     </div>
   </div>
-</section>
-
-<section class="project-section sage">
-  <p class="ps-eyebrow">Casino Games</p>
-  <h2 class="ps-heading">House rules</h2>
-  <table class="casino-table">
-    <thead>
-      <tr>
-        <th>Game</th>
-        <th>Min Bet</th>
-        <th>Max Bet</th>
-        <th>House Edge</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>Coinflip</td><td>$5</td><td>$10,000</td><td>2%</td><td>Simple 50/50</td></tr>
-      <tr><td>Slots</td><td>$5</td><td>$5,000</td><td>10%</td><td>High variance</td></tr>
-      <tr><td>Blackjack</td><td>$20</td><td>$10,000</td><td>3.5%</td><td>Skill element</td></tr>
-      <tr><td>Roulette</td><td>$10</td><td>$15,000</td><td>2.7%</td><td>Multiple bet types</td></tr>
-      <tr><td>Dice Roll</td><td>$5</td><td>$8,000</td><td>4%</td><td>Higher / Lower</td></tr>
-    </tbody>
-  </table>
 </section>
 
 <section class="project-section dark">
@@ -235,11 +208,17 @@
   <h2 class="ps-heading light">Technology</h2>
   <div class="tech-pills">
     <span class="tech-pill">Python</span>
-    <span class="tech-pill">discord.py</span>
-    <span class="tech-pill">Slash Commands</span>
-    <span class="tech-pill">JSON Storage</span>
-    <span class="tech-pill">Cogs Architecture</span>
-    <span class="tech-pill">Economy System</span>
+    <span class="tech-pill">Flask</span>
+    <span class="tech-pill">Flask-SocketIO</span>
+    <span class="tech-pill">XGBoost</span>
+    <span class="tech-pill">PyTorch</span>
+    <span class="tech-pill">scikit-learn</span>
+    <span class="tech-pill">Pandas</span>
+    <span class="tech-pill">NumPy</span>
+    <span class="tech-pill">nba_api</span>
+    <span class="tech-pill">ESPN APIs</span>
+    <span class="tech-pill">WebSocket</span>
+    <span class="tech-pill">joblib</span>
   </div>
 </section>
 
