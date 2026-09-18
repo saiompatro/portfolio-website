@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NBA AI — Saiom Patro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -12,15 +15,14 @@
   <a href="../index.html" class="nav-logo">Saiom Patro</a>
   <ul class="nav-links">
     <li><a href="../index.html#about">About</a></li>
-    <li><a href="../index.html#work">Work</a></li>
-    <li><a href="../index.html#archive">Archive</a></li>
-    <li><a href="../index.html#contact">Contact</a></li>
+    <li><a href="../index.html#experience">Experience</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
   </ul>
   <a href="../uploads/SAIOM RESUME.pdf" class="nav-resume" download>Resume</a>
 </nav>
 
 <section class="project-hero">
-  <a href="../index.html#work" class="project-back">All Projects</a>
+  <a href="../index.html#projects" class="project-back">All Projects</a>
   <div class="project-num">05 / 06</div>
   <div class="project-hero-badge">
     <span>Machine Learning</span>
@@ -32,15 +34,22 @@
   <p class="project-hero-desc">Real-time NBA game analytics dashboard — ingesting live play-by-play data, running an XGBoost shot-quality model and a PyTorch win-probability model, and delivering live predictions via WebSocket.</p>
   <div class="project-hero-links">
     <a href="https://github.com/saiompatro/NBA-AI" class="btn-primary" target="_blank">GitHub ↗</a>
-    <a href="../index.html#work" class="btn-outline">← All Projects</a>
+    <a href="../index.html#projects" class="btn-outline">← All Projects</a>
   </div>
+</section>
+
+<section class="project-section demo">
+  <p class="ps-eyebrow">Demo</p>
+  <h2 class="ps-heading">See it run</h2>
+  <video class="demo-video" controls playsinline preload="metadata"
+         poster="../uploads/nba-ai-demo.jpg" src="../uploads/nba-ai-demo.mp4"></video>
 </section>
 
 <section class="project-section sage">
   <div class="two-col">
     <div>
       <p class="ps-eyebrow">The Models</p>
-      <h2 class="ps-heading">Live<br><em style="font-style:italic; color:var(--sage-d);">intelligence.</em></h2>
+      <h2 class="ps-heading">Live<br><em>intelligence.</em></h2>
     </div>
     <div class="ps-body">
       <p>NBA AI pairs two purpose-built models to analyse every possession in real time. An XGBoost shot-quality regressor scores each attempt using distance, angle, defender proximity, and shot-clock context. A PyTorch MLP takes that score plus game state to output a rolling win probability — refreshed every three seconds via WebSocket.</p>
@@ -88,7 +97,7 @@
 </section>
 
 <section class="project-section dark">
-  <p class="ps-eyebrow" style="color:var(--sage-m)">Stack</p>
+  <p class="ps-eyebrow">Stack</p>
   <h2 class="ps-heading light">Technology</h2>
   <div class="tech-pills">
     <span class="tech-pill">Python</span>
@@ -107,7 +116,7 @@
 </section>
 
 <footer class="project-footer">
-  <a href="../index.html#work" class="btn-outline">← Back to Portfolio</a>
+  <a href="../index.html#projects" class="btn-outline">← Back to Portfolio</a>
   <span class="footer-copy">Saiom Patro · 2025</span>
 </footer>
 
